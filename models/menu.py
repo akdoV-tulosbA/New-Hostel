@@ -24,8 +24,10 @@ response.google_analytics_id = None
 
 response.menu = [
     (T('Home'), False, URL('default', 'index'), []),
+    (SPAN('Newspaper', _class='highlighted'), False, 'http://google.com', [
     ('New Newspaper Subscription', False, URL('default', 'newspaper'), []),
     ('View Existing Subscriptions', False, URL('default', 'show_newspaper_subscriptions'), [])
+    ])
 ]
 
 DEVELOPMENT_MENU = True
@@ -40,7 +42,7 @@ def _():
     ctr = request.controller
     # useful links to internal and external resources
     response.menu += [
-        (SPAN('web2py', _class='highlighted'), False, 'http://web2py.com', [
+        (SPAN('web2py', _class='highlighted'), False, 'http://web2py.com', [  
         (T('My Sites'), False, URL('admin', 'default', 'site')),
         (T('This App'), False, URL('admin', 'default', 'design/%s' % app), [
         (T('Controller'), False,
