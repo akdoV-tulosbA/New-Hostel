@@ -63,3 +63,79 @@ success!
 timestamp: 2015-04-17T18:11:39.814785
 ALTER TABLE newspaper ADD subscriber INTEGER REFERENCES auth_user (id) ON DELETE CASCADE;
 success!
+timestamp: 2015-04-17T19:33:56.226355
+ALTER TABLE auth_user ADD city CHAR(512);
+timestamp: 2015-04-17T19:33:56.379805
+ALTER TABLE auth_user ADD zip CHAR(512);
+timestamp: 2015-04-17T19:33:56.515919
+ALTER TABLE auth_user ADD phone CHAR(512);
+timestamp: 2015-04-17T19:33:56.704683
+ALTER TABLE auth_user ADD address CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2015-04-17T19:54:07.399295
+ALTER TABLE auth_user ADD phone_number INTEGER;
+timestamp: 2015-04-17T19:54:07.526487
+ALTER TABLE auth_user ADD home_address TEXT;
+timestamp: 2015-04-17T19:54:07.648865
+ALTER TABLE auth_user ADD dob DATE;
+timestamp: 2015-04-17T19:54:07.794387
+ALTER TABLE auth_user ADD sex CHAR(512);
+timestamp: 2015-04-17T19:54:07.939887
+ALTER TABLE auth_user ADD name_of_father CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!

@@ -49,16 +49,14 @@ plugins = PluginManager()
 
 
 ## create all tables needed by auth if not custom tables
-
+auth.define_tables(username=False, signature=False)
 
 auth.settings.extra_fields['auth_user']= [
-  Field('Sex', requires=IS_IN_SET(['Male', 'Female', 'Other'])),
-  Field('phone_number', 'integer', IS_LENGTH(10)),
-  Field('name_of_father', 'string'),
-  Field('home_address', 'text'),
-  Field('dob', 'date')]
+  Field('address', 'string'),
+  Field('city'),
+  Field('zip'),
+  Field('phone')]
 
-auth.define_tables(username=False, signature=False)
 ## configure email
 mail = auth.settings.mailer
 mail.settings.server = 'logging' if request.is_local else 'smtp.gmail.com:587'
