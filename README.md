@@ -1,4 +1,4 @@
-# Hostel
+# New-Hostel
 # Aayush is indecisive
 
 #Korny is
