@@ -1,0 +1,23 @@
+{{extend 'layout.html'}}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Name of Newspaper</th>
+			<th>Subscription Type</th>
+		</tr>
+		
+		{{for r in subs:}}
+		<tr>
+			<td>{{=r.choice_of_newspaper}}</td>
+			<td>{{=r.subscription_type}}</td>
+		</tr>
+		{{pass}}
+	</table>
+
+</body>
+</html>

@@ -21,6 +21,20 @@ def index():
     return dict(message=T('Hello World'))
 
 
+@auth.requires_login()
+def hello():
+    return dict(message='hello %(first_name)s' % auth.user)
+
+
+#def register():
+ #   admin_auth = session.auth
+  #  auth.is_logged_in = lambda: False
+   # def post_register(form):
+    #    session.auth = admin_auth
+    #    auth.user = session.auth.user
+    #auth.settings.register_onaccept = post_register
+    #return dict(form=auth.register())
+
 def user():
     """
     exposes:
@@ -38,6 +52,19 @@ def user():
     """
     return dict(form=auth())
 
+@auth.requires_login()
+def newspaper():
+    db.newspaper.subscriber.default=auth.user.id
+    form=SQLFORM(db.newspaper).process()
+    if form.accepted:
+        session.flash = ('Okay!')
+    return locals()
+
+
+@auth.requires_login()
+def show_newspaper_subscriptions():
+    subs = db(db.newspaper.subscriber==auth.user.id).select(db.newspaper.id, db.newspaper.choice_of_newspaper, db.newspaper.subscription_type) 
+    return locals()
 
 @cache.action()
 def download():

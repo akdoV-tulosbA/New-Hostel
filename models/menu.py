@@ -23,7 +23,9 @@ response.google_analytics_id = None
 #########################################################################
 
 response.menu = [
-    (T('Home'), False, URL('default', 'index'), [])
+    (T('Home'), False, URL('default', 'index'), []),
+    ('New Newspaper Subscription', False, URL('default', 'newspaper'), []),
+    ('View Existing Subscriptions', False, URL('default', 'show_newspaper_subscriptions'), [])
 ]
 
 DEVELOPMENT_MENU = True
